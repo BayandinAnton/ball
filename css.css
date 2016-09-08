@@ -1,0 +1,131 @@
+body{
+	background-color: #E2C8FB;
+	overflow: hidden;
+}
+.ball{
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	left: 50%;
+	/*border-radius: 50px;*/
+	/*background-color: #F22F2F;*/
+}
+.shadow{
+	background-color: rgba(0,0,0,0.4);
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	top: calc( 50% + 25px ) ;
+	left: 50%;
+	border-radius: 150px;
+
+	transform: scaleY(0.5);
+}
+
+
+
+.animate{
+	-webkit-animation: movedBall 0.6s ease-out infinite alternate;;
+	-o-animation: movedBall 0.6s ease-out infinite alternate;;
+	animation: movedBall 0.6s ease-out infinite alternate;;
+}
+
+.animateShadow{
+	-webkit-animation:  animateShadow 0.6s ease-out infinite alternate;;
+	-o-animation:  animateShadow 0.6s ease-out infinite alternate;;
+	animation:  animateShadow 0.6s ease-out infinite alternate;	
+}
+
+.svg-animate{
+	
+}
+
+@keyframes animateShadow{
+	from{
+		background-color: rgba(0,0,0,0.4);
+		-webkit-transform-origin: scale(1,0.5);;
+		-moz-transform-origin: scale(1,0.5);;
+		-ms-transform-origin: scale(1,0.5);;
+		-o-transform-origin: scale(1,0.5);;
+		transform-origin: scale(1,0.5);;
+
+	}
+	to{
+		background-color: rgba(0,0,0,0.1);
+		-webkit-transform-origin: scale(0.5,0.15);
+		-moz-transform-origin: scale(0.5,0.15);
+		-ms-transform-origin: scale(0.5,0.15);
+		-o-transform-origin: scale(0.5,0.15);
+		transform-origin: scale(0.5,0.15);
+	}
+}
+
+.fullScreen{
+	animation: animateFS 5s ease-in;	
+}
+
+@keyframes animateFS{
+	from{
+		top:50%;
+		transform: translateX(20px);
+		position: fixed;
+	}
+	to{  
+		transform: scale(25);
+		top:50%;
+		position: fixed;		
+	}
+}
+
+
+@keyframes movedBall{
+	0%{
+		top:50%;
+		left: 50%;
+		transform: scaleY(0.87);  
+	}
+	17%{
+		transform: scaleY(1);
+	}
+	100%{
+		
+		top: calc( 50% - 100px);
+	}
+}
+
+div.text{
+	position: absolute;
+	top: calc( 50% - 120px);
+	left: calc( 50% - 210px);
+	background-color: rgba(0,0,0,0.3);
+	padding: 5px 10px;
+
+	transform : skewX(45deg);
+
+	transition: all 0.5s ease-in-out;
+}
+
+div.text:hover{
+	transform : skewX(0deg);
+}
+
+
+p{
+	color: white;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.text-1{
+	-webket-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-family: 'Merriweather Sans', sans-serif;
+	font-size: 40px;
+	transform: rotate(45);
+}
+.text-2{
+	font-family: 'Abel', sans-serif;
+	font-size: 45px;
+	text-align: right;
+	transform: rotate(45);
+}
