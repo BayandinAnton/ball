@@ -1,0 +1,4 @@
+/* intentionally left minimal; component styles use Tailwind classes */
+#root {
+  height: 100%;
+}
